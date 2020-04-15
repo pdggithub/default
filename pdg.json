@@ -10,7 +10,7 @@
     },
     "windowsOSVersion": {
       "type": "string",
-      "defaultValue": "2019-Datacenter"
+      "defaultValue": "2016-Datacenter"
     },
     "vmSize": {
       "type": "string",
@@ -48,7 +48,8 @@
         "typeHandlerVersion": "1.9",
         "autoUpgradeMinorVersion": true,
         "settings": {
-            "fileUris": ["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1"]
+            "fileUris": ["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1"],
+            "commandToExecute":""
     },
         "protectedSettings": {
           "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}
