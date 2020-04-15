@@ -30,11 +30,11 @@
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
-    "publicIPAddressName": "myPublicIP",
+    "publicIPAddressName": "[concat(parameters('serverName'), '-pip')]",
     "vmName": "[parameters('serverName')]",
-    "virtualNetworkName": "MyVNET",
+    "virtualNetworkName": "PDG-VNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-    "networkSecurityGroupName": "default-NSG"
+    "networkSecurityGroupName": "[concat(parameters('serverName'), '-NSG')]"
   },
   "resources": [
     {
