@@ -26,7 +26,7 @@
   },
   "variables": {
     "storageAccountName": "[concat('sa', uniquestring(resourceGroup().id))]",
-    "nicName": "[concat(parameters('serverName'), 'nic')]",
+    "nicName": "[concat(parameters('serverName'), '-nic')]",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
@@ -58,7 +58,6 @@
       }
     },
     {
-      "comments":  "Default Network Security Group for template",
       "type":  "Microsoft.Network/networkSecurityGroups",
       "apiVersion":  "2019-08-01",
       "name":  "[variables('networkSecurityGroupName')]",
@@ -66,7 +65,7 @@
       "properties": {
         "securityRules": [
           {
-            "name":  "default-allow-3389",
+            "name":  "Allow-3389",
             "properties": {
               "priority":  1000,
               "access":  "Allow",
